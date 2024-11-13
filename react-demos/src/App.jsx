@@ -1,35 +1,28 @@
 import React from "react";
-const Cart = () => {
-const items = [
-  "Iphone", "Powerbank", "Shoes", "Car", "Hoddie"
-];
+import StyleCard from "./components/StyleCard";
+import ProfileCard from "./components/ProfileCard";
+import IconsComponenet from "./components/IconsComponenet";
 
 
-
- return <div>
-  <h1>Cart </h1>
-  {items.length > 0 && <h2>You have {items.length}
-    items in your Cart</h2>}
-
-    <ul>
-      <h4>Products</h4>
-
-      {items.map(item => (
-        <li key={Math.random}>{item}</li>
-      ))}
-    </ul>
- </div>
+const Button = () => {
+  const handleClick = () => console.log(Math.round(Math.random() * 100));
+  return (
+    <button onClick={(handleClick) => 
+      console.log('Button clicked')
+    }>Click Me</button>
+  )
 }
 
-
 const App = () => {
-  return (
-    <div>
-<Cart/>
+ return (
+  <div>
+    <StyleCard/>
+    <ProfileCard/>
+    <IconsComponenet/>
+    <Button/>
 
-
-    </div>
-  )
+  </div>
+ )
 }
 
 export default App;
