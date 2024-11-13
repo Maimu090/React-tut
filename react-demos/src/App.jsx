@@ -1,23 +1,28 @@
-import React from 'react'
-import JSXRules from './components/JSXRules'
+import React from "react";
 
 const App = () => {
-const myName = 'John';
-const multiply= (a, b) => a + b 
-const specialClass = 'special'
-
-
   return (
-  
-    <section>
-        <p>2 + 2 = {2 + 2}</p>
-        <h1>{myName}</h1>
-        <p>My friends List: {[ 'Alex', 'John', 'Waheed']}</p>
-        <p>2 * 2 = { multiply (2, 10)}</p>
-        <p className={special}>This is special </p>
-    </section>
-  
-  )
-}
+    <User
+      name="Maimunah"
+      age={25}
+      isMarried={true}
+      hobbies={["reading", "coding", "traveling"]}
+      img="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+    />
+  );
+};
 
-export default App
+const User = (props) => {
+  console.log(props);
+  return (
+    <div>
+      <img src={props.img} alt="profile" width={200} />
+      <h1>Name: {props.name}</h1>
+      <h2>Age: {props.age}</h2>
+      <h2>Is Married: {props.isMarried ? "Yes" : "No"}</h2>
+      <h2>Hobbies:{props.hobbies}</h2>
+    </div>
+  );
+};
+
+export default App;
