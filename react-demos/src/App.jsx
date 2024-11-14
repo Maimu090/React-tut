@@ -1,28 +1,19 @@
-import React from "react";
-import StyleCard from "./components/StyleCard";
-import ProfileCard from "./components/ProfileCard";
-import IconsComponenet from "./components/IconsComponenet";
+import { useState } from 'react'
+import ComponentsOne from './components/ComponentsOne'
+import ComponentsTwo from './components/ComponentsTwo'
 
-
-const Button = () => {
-  const handleClick = () => console.log(Math.round(Math.random() * 100));
-  return (
-    <button onClick={(handleClick) => 
-      console.log('Button clicked')
-    }>Click Me</button>
-  )
-}
 
 const App = () => {
- return (
-  <div>
-    <StyleCard/>
-    <ProfileCard/>
-    <IconsComponenet/>
-    <Button/>
+  const [count, setCount] = useState(0)
 
-  </div>
- )
+  return (
+    <div>
+   <ComponentsOne count={count} onClickHandler={() => setCount(count + 1)} />
+
+   <ComponentsTwo count={count} onClickHandler={() => setCount(count + 1)} />
+    </div>
+  )
+
 }
 
 export default App;
