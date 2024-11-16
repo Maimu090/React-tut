@@ -1,19 +1,39 @@
-import { useState } from 'react'
-import ComponentsOne from './components/ComponentsOne'
-import ComponentsTwo from './components/ComponentsTwo'
+import { useState, useEffect } from 'react'
+
+
 
 
 const App = () => {
-  const [count, setCount] = useState(0)
+const [data, setData] = useState([])
+
+
+
+useEffect(() => {
+async function getData() {
+const response =  await fetch("https://jsonplaceholder.typicode.com/posts")
+const data = await response.json()
+if (data && data.length) setData(data)
+} 
+
+getData();
+}, [])
 
   return (
     <div>
-   <ComponentsOne count={count} onClickHandler={() => setCount(count + 1)} />
+<ul>
+  {data.map((todo => (
+    <section key={todo.id}>
+  <li>{todo.title}</li>
+  <li>{todo.body}</li>
+  </section>
+ ) ))}
+  </ul>
 
-   <ComponentsTwo count={count} onClickHandler={() => setCount(count + 1)} />
+
     </div>
-  )
-
+)
 }
 
-export default App;
+export default App
+ 
+ 
