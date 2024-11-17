@@ -1,39 +1,13 @@
-import { useState, useEffect } from 'react'
-
-
-
+import React from 'react'
+import UniqueId from './components/UniqueId'
 
 const App = () => {
-const [data, setData] = useState([])
-
-
-
-useEffect(() => {
-async function getData() {
-const response =  await fetch("https://jsonplaceholder.typicode.com/posts")
-const data = await response.json()
-if (data && data.length) setData(data)
-} 
-
-getData();
-}, [])
 
   return (
     <div>
-<ul>
-  {data.map((todo => (
-    <section key={todo.id}>
-  <li>{todo.title}</li>
-  <li>{todo.body}</li>
-  </section>
- ) ))}
-  </ul>
-
-
+<UniqueId/>
     </div>
-)
+  )
 }
 
 export default App
- 
- 
