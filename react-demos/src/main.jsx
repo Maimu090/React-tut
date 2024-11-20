@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import App from './Hidden/App'
+import App from './Accordion/App'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
