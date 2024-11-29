@@ -1,15 +1,9 @@
-// import ContactForm from "./components.tsx/ContactForm"
-import EventHandling from "./components.tsx/EventHandling"
-// import FocusInput from "./components.tsx/FocusInput"
-
-
+import MyComponent from "./components.tsx/MyComponent"
 
 const App = () => {
   return (
     <div>
-{/* // <FocusInput/>
-// <ContactForm/> */}
-<EventHandling/>
+<MyComponent/>
     </div>
   )
 }
