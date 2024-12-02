@@ -1,9 +1,9 @@
-import MyComponent from "./components.tsx/MyComponent"
+import Dashboard from "./components/Dashboard"
 
 const App = () => {
   return (
     <div>
-<MyComponent/>
+<Dashboard/>
     </div>
   )
 }
